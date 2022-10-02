@@ -31,8 +31,7 @@ Send a text for google search result.
 
 """
 
-JOIN_BUTTON = 
-[
+JOIN_BUTTON = [
     InlineKeyboardButton(
         text='⚡Team Emo⚡',
         url='https://telegram.me/EmoBotDevolopers'
