@@ -20,20 +20,31 @@ Bot = Client(
 )
 
 
-START_TEXT = """Hello {}
-I am a google search bot. \
+START_TEXT = """👋 Hello {}
+🥀 I am a Emo Google Search Bot. \
 Send a text for google search result.
 
 > `I can search from google. Use me in inline.`
 
-Made by @FayasNoushad"""
+👨‍💻 Devoloper :- @ImRishmika
+⚡ Powerd By Emo Network
 
-JOIN_BUTTON = [
+"""
+
+JOIN_BUTTON = 
+[
     InlineKeyboardButton(
-        text='⚙ Join Updates Channel ⚙',
-        url='https://telegram.me/FayasNoushad'
+        text='⚡Team Emo⚡',
+        url='https://telegram.me/EmoBotDevolopers'
     )
-]
+],
+[
+    InlineKeyboardButton(
+        text='👨‍💻 Devoloper 👨‍💻',
+        url='https://telegram.me/ImRishmika'
+    )
+],
+
 
 
 @Bot.on_message(filters.private & filters.command(["start"]))
@@ -49,11 +60,11 @@ async def start(bot, update):
 @Bot.on_message(filters.private & filters.text)
 async def filter(bot, update):
     await update.reply_text(
-        text="`Click the button below for searching...`",
+        text="☘ `Click the button below for searching...`",
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="Search Here", switch_inline_query_current_chat=update.text)],
-                [InlineKeyboardButton(text="Search in another chat", switch_inline_query=update.text)]
+                [InlineKeyboardButton(text="💭 Search Here", switch_inline_query_current_chat=update.text)],
+                [InlineKeyboardButton(text="👁‍🗨 Search in another chat", switch_inline_query=update.text)]
             ]
         ),
         disable_web_page_preview=True,
@@ -76,7 +87,7 @@ async def inline(bot, update):
                 ),
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [InlineKeyboardButton(text="Link", url=result["link"])],
+                        [InlineKeyboardButton(text="🔗 Link", url=result["link"])],
                         JOIN_BUTTON
                     ]
                 )
@@ -90,9 +101,9 @@ def google(query):
     informations = r.json()["results"][:50]
     results = []
     for info in informations:
-        text = f"**Title:** `{info['title']}`"
-        text += f"\n**Description:** `{info['description']}`"
-        text += f"\n\nMade by @FayasNoushad"
+        text = f"🔅 **Title:** `{info['title']}`"
+        text += f"\n💬 **Description:** `{info['description']}`"
+        text += f"\n\n⚡ Powerd by Emo Network"
         results.append(
             {
                 "title": info['title'],
